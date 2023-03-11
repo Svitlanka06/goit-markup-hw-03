@@ -255,7 +255,15 @@ body {
 /* ===================/OUR TEAM=================== */
 
 /*====================PORTFOLIO BUTTON====================*/
-
+.portfolio-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border: transparent;
+  text-transform: none;
+  padding-top: 96px;
+}
 .menu-button {
   font-family: inherit;
   width: 116px;
@@ -298,6 +306,11 @@ body {
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: var(--text-color);
+  margin-top: 8px;
+}
+.text-description-gallery {
+  padding-top: 32px;
+  padding-bottom: 32px;
 }
 /* ================FOOTER ================ */
 .footer {
@@ -328,5 +341,7 @@ body {
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.02em;
+  width: 264px;
+  margin-top: 16px;
   color: var(--accent-color);
 }
