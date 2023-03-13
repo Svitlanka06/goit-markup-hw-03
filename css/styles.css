@@ -41,6 +41,11 @@ body {
   font-style: normal;
   color: var(--text-color);
 }
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
 .list {
   list-style: none;
 }
@@ -79,6 +84,7 @@ body {
 .header {
   padding-top: 24px;
   padding-bottom: 24px;
+  border: 1px solid var(--accent-color);
 }
 .header .menu-link {
   font-weight: 500;
@@ -94,9 +100,11 @@ body {
 .menu-link:focus {
   color: var(--pressed-state-color);
 }
-.address {
+.address-mail,
+.address-tel {
   color: var(--text-color);
-  font-style: normal;
+}
+.address-item:not(:last-child) {
   margin-right: 40px;
 }
 .header-address {
@@ -107,11 +115,14 @@ body {
   letter-spacing: 0.02em;
   color: var(--text-color);
 }
-.address:hover,
-.address:focus {
+.address-mail:hover,
+.address-mail:focus {
   color: var(--pressed-state-color);
 }
-
+.address-tel:hover,
+.address-tel:focus {
+  color: var(--pressed-state-color);
+}
 .header-logo {
   font-family: "Raleway", sans-serif;
   font-weight: 800;
@@ -158,8 +169,10 @@ body {
   letter-spacing: 0.04em;
   color: var(--title-color);
   background: var(--primary-brand-color);
-  width: 169px;
+  min-width: 169px;
   height: 56px;
+  border: none;
+  padding: 16px 32px;
 }
 .hero-btn:hover,
 .hero-btn:focus {
@@ -168,6 +181,8 @@ body {
 /* ===============/HERO=============== */
 /* ===================DESCRIPTION=================== */
 .description-container {
+  padding-top: 120px;
+  padding-bottom: 120px;
 }
 
 .description-title-hidden {
@@ -175,9 +190,10 @@ body {
 }
 .description-list {
   display: flex;
-  padding-top: 120px;
-  padding-bottom: 120px;
   gap: 24px;
+}
+.description-item {
+  width: 264px;
 }
 
 .description-title {
@@ -193,9 +209,14 @@ body {
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: var(--text-color);
+  margin-top: 8px;
 }
 /* ===================/DESCRIPTION=================== */
 /* ===================OUR SKILLS=================== */
+.container-skills {
+  padding-top: 72px;
+  padding-bottom: 120px;
+}
 .title-skills {
   font-size: 36px;
   line-height: 1.11;
@@ -203,18 +224,24 @@ body {
   letter-spacing: 0.02em;
   color: var(--dark-color);
   text-transform: capitalize;
+  margin-bottom: 72px;
 }
 .skills-list {
-  padding-top: 72px;
-  padding-bottom: 120px;
   display: flex;
   gap: 24px;
+}
+.skills-item {
+  width: calc((100%-2 * 24px) / 3);
 }
 /* ===================/OUR SKILLS=================== */
 
 /* ===================OUR TEAM=================== */
 .about {
   background-color: var(--light-color);
+}
+.container-team {
+  padding-bottom: 120px;
+  padding-top: 72px;
 }
 .about-title {
   font-size: 36px;
@@ -223,15 +250,16 @@ body {
   letter-spacing: 0.02em;
   text-transform: capitalize;
   color: var(--dark-color);
-  padding-top: 120px;
+  margin-bottom: 72px;
 }
 .about-list {
-  padding-bottom: 120px;
-  padding-top: 72px;
   display: flex;
   gap: 24px;
 }
 .about-item {
+  background-color: var(--title-color);
+  width: calc((100%-3 * 24px) / 4);
+  border-radius: 5px;
 }
 .list {
 }
@@ -240,21 +268,26 @@ body {
   font-size: 20px;
   line-height: 1.2;
   letter-spacing: 0.02em;
-  color: var(--dark-color);
+  color: radius var(--dark-color);
 }
 .about-text {
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: var(--text-color);
+  margin-top: 8px;
 }
 .team-text {
-  padding: 32px 0;
+  padding: 32px 16px;
   text-align: center;
 }
 /* ===================/OUR TEAM=================== */
 
 /*====================PORTFOLIO BUTTON====================*/
+.portfolio-container {
+  padding-top: 72px;
+  padding-bottom: 120px;
+}
 .portfolio-list {
   display: flex;
   flex-direction: row;
@@ -262,11 +295,9 @@ body {
   align-items: center;
   border: transparent;
   text-transform: none;
-  padding-top: 96px;
 }
 .menu-button {
   font-family: inherit;
-  width: 116px;
   height: 48px;
   background: #f4f4fd;
   border: 1px solid #e7e9fc;
@@ -277,7 +308,10 @@ body {
   letter-spacing: 0.04em;
   color: var(--primary-brand-color);
   cursor: pointer;
+  padding: 12px 24px;
+  background-color: transparent;
 }
+
 .menu-button:hover,
 .menu-button:focus {
   color: var(--title-color);
@@ -287,13 +321,16 @@ body {
 
 /*====================PORTFOLIO GALLERY====================*/
 .gallery-list {
-  margin-bottom: 120px;
-  margin-top: 72px;
   display: flex;
   flex-wrap: wrap;
   column-gap: 24px;
   row-gap: 48px;
+  margin-top: 72px;
 }
+.gallery-item {
+  width: calc((100%-6 * 24px) / 9);
+}
+
 .gallery-title {
   font-weight: 500;
   font-size: 20px;
@@ -311,6 +348,10 @@ body {
 .text-description-gallery {
   padding-top: 32px;
   padding-bottom: 32px;
+  padding-left: 16px;
+  border-bottom: 1px solid var(--accent-color);
+  border-left: 1px solid var(--accent-color);
+  border-right: 1px solid var(--accent-color);
 }
 /* ================FOOTER ================ */
 .footer {
