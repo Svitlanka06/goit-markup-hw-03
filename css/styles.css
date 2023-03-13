@@ -171,6 +171,7 @@ img {
   height: 56px;
   border: none;
   padding: 16px 32px;
+  border-radius: 4px;
 }
 .hero-btn:hover,
 .hero-btn:focus {
@@ -178,7 +179,7 @@ img {
 }
 /* ===============/HERO=============== */
 /* ===================DESCRIPTION=================== */
-.description-container {
+.description {
   padding-top: 120px;
   padding-bottom: 120px;
 }
@@ -211,8 +212,7 @@ img {
 }
 /* ===================/DESCRIPTION=================== */
 /* ===================OUR SKILLS=================== */
-.container-skills {
-  padding-top: 72px;
+.skills {
   padding-bottom: 120px;
 }
 .title-skills {
@@ -229,17 +229,15 @@ img {
   gap: 24px;
 }
 .skills-item {
-  width: calc((100%-2 * 24px) / 3);
+  width: calc((100% - 2 * 24px) / 3);
 }
 /* ===================/OUR SKILLS=================== */
 
 /* ===================OUR TEAM=================== */
 .about {
   background-color: var(--light-color);
-}
-.container-team {
   padding-bottom: 120px;
-  padding-top: 72px;
+  padding-top: 120px;
 }
 .about-title {
   font-size: 36px;
@@ -256,11 +254,10 @@ img {
 }
 .about-item {
   background-color: var(--title-color);
-  width: calc((100%-3 * 24px) / 4);
-  border-radius: 5px;
+  width: calc((100% - 3 * 24px) / 4);
+  border-radius: 0px 0px 4px 4px;
 }
-.list {
-}
+
 .about-title-top {
   font-weight: 500;
   font-size: 20px;
@@ -282,38 +279,50 @@ img {
 /* ===================/OUR TEAM=================== */
 
 /*====================PORTFOLIO BUTTON====================*/
-.portfolio-container {
-  padding-top: 72px;
+.section-button {
+  padding-top: 96px;
   padding-bottom: 120px;
 }
+.visually-hidden {
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  margin: -1px;
+}
+
 .portfolio-list {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  border: transparent;
   text-transform: none;
 }
 .menu-button {
   font-family: inherit;
   height: 48px;
-  background: #f4f4fd;
   border: 1px solid #e7e9fc;
   border-radius: 4px;
   font-weight: 500;
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.04em;
-  color: var(--primary-brand-color);
+  color: var(--pressed-state-color);
   cursor: pointer;
   padding: 12px 24px;
-  background-color: transparent;
+  background: var(--light-color);
 }
 
 .menu-button:hover,
 .menu-button:focus {
-  color: var(--title-color);
+  color: var(--light-color);
   background-color: var(--pressed-state-color);
+  border-color: transparent;
 }
 /*====================/PORTFOLIO BUTTON====================*/
 
@@ -326,7 +335,7 @@ img {
   margin-top: 72px;
 }
 .gallery-item {
-  width: calc((100%-6 * 24px) / 9);
+  width: calc((100% - 2 * 24px) / 3);
 }
 
 .gallery-title {
@@ -347,6 +356,7 @@ img {
   padding-top: 32px;
   padding-bottom: 32px;
   padding-left: 16px;
+  padding-right: 16px;
   border-bottom: 1px solid var(--accent-color);
   border-left: 1px solid var(--accent-color);
   border-right: 1px solid var(--accent-color);
